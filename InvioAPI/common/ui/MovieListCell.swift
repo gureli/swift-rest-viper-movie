@@ -14,42 +14,19 @@ class MovieListCell: UITableViewCell {
     @IBOutlet var movieImage: UIImageView!
     @IBOutlet var ratingLabel: UILabel!
 
-    var model: Movie? {
+    var viewModel: MovieViewModel? {
         didSet {
-            titleLabel.text = model?.title ?? ""
-            subtitleLabel.text = model?.genre ?? ""
-            descriptionLabel.text = shortenPlot(model?.plot ?? "")
-            if let path = model?.poster {
+            titleLabel.text = viewModel?.title ?? ""
+            subtitleLabel.text = viewModel?.genre ?? ""
+            descriptionLabel.text = viewModel?.plot ?? ""
+            if let path = viewModel?.poster {
                 movieImage.loadFrom(urlPath: path)
             }
-            ratingLabel.text = getRatings(model?.ratings)
+            ratingLabel.text = viewModel?.ratings
         }
     }
 
-    private func shortenPlot(_ plot: String) -> String {
-        guard plot.count > 0 else { return plot }
-        guard plot.count > 100 else { return plot }
-
-        let index = plot.index(plot.startIndex, offsetBy: 100)
-        let plotShortened = plot[..<index]
-        return String(plotShortened) + "..."
-    }
-
-    private func getRatings(_ ratings: [Rating]?) -> String {
-        var text = ""
-        guard let ratings = ratings else {
-            return text
-        }
-        let sources = ratings.map { $0.source }
-        let values = ratings.map { $0.value }
-        if sources.count == values.count {
-            for i in 0 ..< sources.count {
-                text += "\(sources[i])"
-                text += ":\(values[i]) \n"
-            }
-        }
-        return text
-    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

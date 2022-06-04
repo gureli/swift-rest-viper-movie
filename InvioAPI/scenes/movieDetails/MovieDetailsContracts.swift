@@ -16,7 +16,7 @@ import UIKit
  */
 /// MovieDetails Module ViewController Protocol
 protocol MovieDetailsViewControllerProtocol: AnyObject {
-    func setViewModel(viewModel: MovieDetailsEntity.ViewModel)
+    func setViewModel(viewModel: MovieViewModel)
 }
 
 //MARK: Interactor -

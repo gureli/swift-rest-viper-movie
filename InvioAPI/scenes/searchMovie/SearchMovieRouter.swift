@@ -16,7 +16,7 @@ class SearchMovieRouter: SearchMovieRouterProtocol {
         self.viewControllerFactory = viewControllerFactory
     }
 
-    func navigateToDetails(viewModel: MovieDetailsEntity.ViewModel, vc: UIViewController) {
+    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController) {
         let nextVC = viewControllerFactory.movieDetails()
         nextVC.setViewModel(viewModel: viewModel)
         let destination = nextVC as! UIViewController

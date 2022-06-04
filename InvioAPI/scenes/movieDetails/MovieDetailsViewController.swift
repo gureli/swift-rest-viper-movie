@@ -22,7 +22,7 @@ class MovieDetailsViewController: BaseViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navTitle: UINavigationItem!
     var presenter: MovieDetailsPresenterProtocol!
-    var viewModel: MovieDetailsEntity.ViewModel?
+    var viewModel: MovieViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class MovieDetailsViewController: BaseViewController {
         }
     }
 
-    func setViewModel(viewModel: MovieDetailsEntity.ViewModel) {
+    func setViewModel(viewModel: MovieViewModel) {
         self.viewModel = viewModel
     }
 }

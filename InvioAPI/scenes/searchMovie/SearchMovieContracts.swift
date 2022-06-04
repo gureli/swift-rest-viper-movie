@@ -41,7 +41,7 @@ protocol SearchMoviePresenterProtocol {
     func sendSearchRequest(for movieTitle: String)
     func captureResults(list: [Movie])
     func getModel(at index: Int) -> Movie?
-    func navigateToDetails(viewModel: MovieDetailsEntity.ViewModel, vc: UIViewController)
+    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController)
     func showErrorMessage(error: Error)
 }
 
@@ -49,5 +49,5 @@ protocol SearchMoviePresenterProtocol {
 
 /// SearchMovie Module Router Protocol
 protocol SearchMovieRouterProtocol {
-    func navigateToDetails(viewModel: MovieDetailsEntity.ViewModel, vc: UIViewController)
+    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController)
 }

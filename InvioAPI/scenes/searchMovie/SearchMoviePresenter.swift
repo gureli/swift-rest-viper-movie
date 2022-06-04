@@ -46,7 +46,7 @@ class SearchMoviePresenter: SearchMoviePresenterProtocol {
 
         return list[index]
     }
-    func navigateToDetails(viewModel: MovieDetailsEntity.ViewModel, vc: UIViewController){
+    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController){
         router.navigateToDetails(viewModel: viewModel, vc: vc)
     }
     func showErrorMessage(error: Error){

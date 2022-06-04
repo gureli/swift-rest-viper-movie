@@ -94,8 +94,7 @@ extension SearchMovieViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MovieListCell
         if let model = presenter.getModel(at: indexPath.row) {
-            cell.model = model
-            
+            cell.viewModel = MovieViewModel(movie: model)
             return cell
         } else {
             return UITableViewCell()
@@ -108,7 +107,7 @@ extension SearchMovieViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = presenter.getModel(at: indexPath.row) {
-            let viewModel = MovieDetailsEntity.ViewModel(movie: model)
+            let viewModel = MovieViewModel(movie: model)
             presenter.navigateToDetails(viewModel: viewModel, vc: self)
         }
     }
@@ -117,9 +116,10 @@ extension SearchMovieViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - Implementing protocol
 
 extension SearchMovieViewController: SearchMovieViewControllerProtocol {
-    func showErrorMessage(error: HTTPError){
+    func showErrorMessage(error: HTTPError) {
         showAlert(title: "Warning", message: error.errorDescription ?? "Undefined error occured.")
     }
+
     func displayNotFound() {
         configureAndPlayNotFoundAnimation()
         moviesTableView.isHidden = true

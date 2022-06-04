@@ -9,31 +9,29 @@
 import UIKit
 
 /// MovieDetails Module Entity
-struct MovieDetailsEntity {
 
-    struct ViewModel{
-        let title: String
-        let genre: String
-        let writer: String
-        let ratings: [Rating]
-        let country: String
-        let language: String
-        let director: String
-        let actors: String
-        let plot: String
-        let poster: String
-        
-        init(movie: Movie){
-            self.title = movie.title
-            self.genre = movie.genre
-            self.writer = movie.writer
-            self.ratings = movie.ratings
-            self.country = movie.country
-            self.language = movie.language
-            self.director = movie.director
-            self.actors = movie.actors
-            self.plot = movie.plot
-            self.poster = movie.poster
-        }
+struct MovieViewModel {
+    let title: String
+    let genre: String
+    let writer: String
+    let ratings: String
+    let country: String
+    let language: String
+    let director: String
+    let actors: String
+    let plot: String
+    let poster: String
+
+    init(movie: Movie) {
+        title = movie.title
+        genre = movie.genre
+        writer = movie.writer
+        ratings = movie.displayableRatings
+        country = movie.country
+        language = movie.language
+        director = movie.director
+        actors = movie.actors
+        plot = movie.shortPlot
+        poster = movie.poster
     }
 }
