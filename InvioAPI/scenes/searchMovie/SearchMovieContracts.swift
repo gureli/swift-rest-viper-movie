@@ -20,6 +20,7 @@ protocol SearchMovieViewControllerProtocol: AnyObject {
     func displayMoviesTableView()
     func displayNotFound()
     func showErrorMessage(error: Error)
+    func addNavigationBar(_ navBar: UINavigationBar)
 }
 
 // MARK: Interactor -

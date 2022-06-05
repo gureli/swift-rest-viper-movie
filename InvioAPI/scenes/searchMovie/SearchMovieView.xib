@@ -24,17 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-Ij-lcm">
-                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="wNH-jj-Z8v"/>
-                    </constraints>
-                    <items>
-                        <navigationItem title="Movies" id="59e-64-GpY"/>
-                    </items>
-                </navigationBar>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-bK-jyS">
-                    <rect key="frame" x="20" y="114" width="374" height="50"/>
+                    <rect key="frame" x="20" y="74" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="cAd-VM-3hV"/>
                     </constraints>
@@ -42,7 +33,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0I9-df-brI">
-                    <rect key="frame" x="20" y="174" width="374" height="50"/>
+                    <rect key="frame" x="20" y="134" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="WUt-en-ZH8"/>
                     </constraints>
@@ -53,10 +44,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qwt-Fx-nbq" userLabel="Container View">
-                    <rect key="frame" x="20" y="244" width="374" height="598"/>
+                    <rect key="frame" x="20" y="204" width="374" height="638"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="cxu-0J-YX9">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="598"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="638"/>
                             <subviews>
                                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q32-F2-OyH">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
@@ -84,16 +75,13 @@
             <accessibility key="accessibilityConfiguration" identifier="sideRoot"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M3Q-bK-jyS" secondAttribute="trailing" constant="20" id="0Jj-zK-Pps"/>
+                <constraint firstItem="M3Q-bK-jyS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="0cT-B2-Yby"/>
                 <constraint firstItem="Qwt-Fx-nbq" firstAttribute="top" secondItem="0I9-df-brI" secondAttribute="bottom" constant="20" id="36i-Ze-I0E"/>
                 <constraint firstItem="0I9-df-brI" firstAttribute="leading" secondItem="M3Q-bK-jyS" secondAttribute="leading" id="7Zb-Oq-Ztt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qwt-Fx-nbq" secondAttribute="bottom" constant="20" id="7yp-pY-h5p"/>
-                <constraint firstItem="x4s-Ij-lcm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JIi-eK-51P"/>
-                <constraint firstItem="x4s-Ij-lcm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Kc7-y8-erg"/>
-                <constraint firstItem="x4s-Ij-lcm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bam-cH-KKf"/>
                 <constraint firstItem="0I9-df-brI" firstAttribute="trailing" secondItem="M3Q-bK-jyS" secondAttribute="trailing" id="dKv-s2-L3p"/>
                 <constraint firstItem="0I9-df-brI" firstAttribute="top" secondItem="M3Q-bK-jyS" secondAttribute="bottom" constant="10" id="i2l-Ui-9xZ"/>
                 <constraint firstItem="Qwt-Fx-nbq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qd1-qo-Pkd"/>
-                <constraint firstItem="M3Q-bK-jyS" firstAttribute="top" secondItem="x4s-Ij-lcm" secondAttribute="bottom" constant="20" id="vfI-sn-ObV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qwt-Fx-nbq" secondAttribute="trailing" constant="20" id="xde-1K-tw9"/>
                 <constraint firstItem="M3Q-bK-jyS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="yK3-0e-j0M"/>
             </constraints>

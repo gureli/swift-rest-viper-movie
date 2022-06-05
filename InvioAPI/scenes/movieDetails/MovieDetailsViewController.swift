@@ -19,8 +19,6 @@ class MovieDetailsViewController: BaseViewController {
     @IBOutlet var writerLabel: UILabel!
     @IBOutlet var directorLabel: UILabel!
 
-    @IBOutlet var navBar: UINavigationBar!
-    @IBOutlet var navTitle: UINavigationItem!
     var presenter: MovieDetailsPresenterProtocol!
     var viewModel: MovieViewModel?
 
@@ -30,14 +28,12 @@ class MovieDetailsViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navBar.backgroundColor = .clear
         if let viewModel = viewModel {
             presenter.presentView(model: viewModel)
         }
     }
 
     func displayView(viewModel: MovieViewModel) {
-        
         posterImageView.loadFrom(urlPath: viewModel.poster)
         genreLabel.text = viewModel.genre
         countryLabel.text = viewModel.country
@@ -46,7 +42,7 @@ class MovieDetailsViewController: BaseViewController {
         actorsLabel.text = viewModel.actors
         plotLabel.text = viewModel.plot
         writerLabel.text = viewModel.writer
-        navTitle.title = viewModel.title
+        self.title = viewModel.title
     }
 
     func setViewModel(viewModel: MovieViewModel) {

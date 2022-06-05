@@ -19,6 +19,7 @@ struct MovieViewModel {
     let language: String
     let director: String
     let actors: String
+    let plotShort: String
     let plot: String
     let poster: String
 
@@ -31,7 +32,8 @@ struct MovieViewModel {
         language = movie.language
         director = movie.director
         actors = movie.actors
-        plot = movie.shortPlot
+        plotShort = movie.shortPlot
+        plot = movie.plot
         poster = movie.poster
     }
 }

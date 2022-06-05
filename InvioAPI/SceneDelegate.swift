@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let factory = ViewControllerFactory(assembler: appDelegate.assembler!)
         if let vc = factory.searchMovie() as? UIViewController {
-            vc.tabBarItem.image = UIImage(named: "logo")
+           // vc.tabBarItem.image = UIImage(named: "logo")
             let navigationController = UINavigationController(rootViewController: vc)
 
             // TabBarController

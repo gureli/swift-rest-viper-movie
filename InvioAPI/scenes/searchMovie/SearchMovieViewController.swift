@@ -39,6 +39,8 @@ class SearchMovieViewController: BaseViewController {
         resultStack.backgroundColor = .clear
         containerView.backgroundColor = .clear
         moviesTableView.backgroundColor = .clear
+       
+        self.title = "Movies"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -113,10 +115,20 @@ extension SearchMovieViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - Implementing protocol
 
 extension SearchMovieViewController: SearchMovieViewControllerProtocol {
-    func showErrorMessage(error: Error) {
-        showAlert(title: "Warning", message: error.localizedDescription )
+    func addNavigationBar(_ navBar: UINavigationBar) {
+        view.addSubview(navBar)
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: nil)
+        let navigationItem = UINavigationItem(title: "Title")
+        navigationItem.leftBarButtonItem = cancelButton
+        navigationItem.rightBarButtonItem = doneButton
+        navBar.items = [navigationItem]
     }
-    
+
+    func showErrorMessage(error: Error) {
+        showAlert(title: "Warning", message: error.localizedDescription)
+    }
+
     func displayNotFound() {
         configureAndPlayNotFoundAnimation()
         moviesTableView.isHidden = true
