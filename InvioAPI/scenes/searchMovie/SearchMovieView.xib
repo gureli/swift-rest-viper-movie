@@ -100,6 +100,9 @@
             <point key="canvasLocation" x="-191.30434782608697" y="100.44642857142857"/>
         </view>
     </objects>
+    <designables>
+        <designable name="erg-qu-Iwm"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

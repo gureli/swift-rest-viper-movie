@@ -35,21 +35,25 @@ class SearchMoviePresenter: SearchMoviePresenterProtocol {
         return list?.count ?? 0
     }
 
-    func getModel(at index: Int) -> Movie? {
+    func navigateToDetails(at index: IndexPath, vc: UIViewController) {
+        guard let viewModel = getViewModel(at: index) else {
+            return
+        }
+        router.navigateToDetails(viewModel: viewModel, vc: vc)
+    }
+
+    func getViewModel(at index: IndexPath) -> MovieViewModel? {
         guard let list = list else {
             return nil
         }
-
-        guard index < list.count else {
+        guard index.row < list.count else {
             return nil
         }
 
-        return list[index]
+        return MovieViewModel(movie: list[index.row])
     }
-    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController){
-        router.navigateToDetails(viewModel: viewModel, vc: vc)
-    }
-    func showErrorMessage(error: Error){
-        
+
+    func showErrorMessage(error: Error) {
+        view.showErrorMessage(error: error)
     }
 }

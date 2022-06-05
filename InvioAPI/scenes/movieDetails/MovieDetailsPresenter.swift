@@ -9,13 +9,15 @@
 import UIKit
 
 /// MovieDetails Module Presenter
-class MovieDetailsPresenter : MovieDetailsPresenterProtocol{
-    
+class MovieDetailsPresenter: MovieDetailsPresenterProtocol {
     weak var view: MovieDetailsViewControllerProtocol!
     var interactor: MovieDetailsInteractorProtocol!
     var router: MovieDetailsRouterProtocol!
-    
+
     init() {
-    
+    }
+
+    func presentView(model: MovieViewModel) {
+        view.displayView(viewModel: model)
     }
 }

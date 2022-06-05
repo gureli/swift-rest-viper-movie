@@ -19,7 +19,7 @@ import UIKit
 protocol SearchMovieViewControllerProtocol: AnyObject {
     func displayMoviesTableView()
     func displayNotFound()
-    func showErrorMessage(error: HTTPError)
+    func showErrorMessage(error: Error)
 }
 
 // MARK: Interactor -
@@ -40,9 +40,9 @@ protocol SearchMoviePresenterProtocol {
     var rowCount: Int { get }
     func sendSearchRequest(for movieTitle: String)
     func captureResults(list: [Movie])
-    func getModel(at index: Int) -> Movie?
-    func navigateToDetails(viewModel: MovieViewModel, vc: UIViewController)
+    func navigateToDetails(at index: IndexPath, vc: UIViewController)
     func showErrorMessage(error: Error)
+    func getViewModel(at index: IndexPath) -> MovieViewModel?
 }
 
 // MARK: Router (aka: Wireframe) -

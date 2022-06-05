@@ -8,7 +8,8 @@
 
 import UIKit
 
-//MARK: View -
+// MARK: View -
+
 /*
  Should replace "class" with "BaseViewProtocol" if available;
  & that will allow the View to act as a UIViewController;
@@ -17,24 +18,28 @@ import UIKit
 /// MovieDetails Module ViewController Protocol
 protocol MovieDetailsViewControllerProtocol: AnyObject {
     func setViewModel(viewModel: MovieViewModel)
+    func displayView(viewModel: MovieViewModel)
 }
 
-//MARK: Interactor -
+// MARK: Interactor -
+
 /// MovieDetails Module Interactor Protocol
 protocol MovieDetailsInteractorProtocol {
-	var presenter: MovieDetailsPresenterProtocol! { get set }
+    var presenter: MovieDetailsPresenterProtocol! { get set }
 }
 
-//MARK: Presenter -
+// MARK: Presenter -
+
 /// MovieDetails Module Presenter Protocol
 protocol MovieDetailsPresenterProtocol {
     var view: MovieDetailsViewControllerProtocol! { get set }
     var interactor: MovieDetailsInteractorProtocol! { get set }
     var router: MovieDetailsRouterProtocol! { get set }
+    func presentView(model: MovieViewModel)
 }
 
-//MARK: Router (aka: Wireframe) -
+// MARK: Router (aka: Wireframe) -
+
 /// MovieDetails Module Router Protocol
 protocol MovieDetailsRouterProtocol {
-    
 }
